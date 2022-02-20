@@ -5,9 +5,9 @@
 int main()   // start
 { // Локальная область
 	int I; I = 1443434; // 4 байт
-	long L; // 4 байт
+	//long LL; // 4 байт
 
-	long long LL; LL = -1349820948329048; // 8 байт
+	long long LL2; LL2 = -1349820948329048; // 8 байт
 	long long int LLI = 14342; //  8 байт
 
 	__int32 I32 = 0; 
@@ -89,5 +89,122 @@ int main()   // start
 	//int amountBrick;
 	//int Amount_Brick;
 
+	// + - / *    %
+	//    ~    negative
+	//    |     or   (+)
+	//    &     and  (*)
+	//    ^   XOR
+	//   <<
+	//   >>
+	// a = 10 b =  11 c = 12 d = 13 e = 14 f = 15
+	int LL = 0xb;
+	int R = 0xc; // 16 запись hex
+
+	int M;
+
+	M = LL | R;
+	M = LL || R; // 0  1
+
+
+	M = LL & R; // &
+	M = LL ^ R;
+	LL = M ^ R;
+
+	//(false == 0)
+
+	//(true == 1)
+
+	(M);
+		// M - > true M!=0   
+		// M -> false M == 0
+
+
+	M = LL << 5;
+	M = (LL == 1) >> 3;
+	M = ~LL;
+
+	//
+
+
+	// bool   true false
+	// and  &&
+	// or   ||
+	// > < 
+	//<=   >=  
+	// !
+	// !=
+	// ==  
+
+
+	bool flag  = (10 % 6 == 4);
+	20 % 6 == 2;
+
+
+	M = M + 1;
+
+	int L = 0;
+	M = 0;
+	L = ++M; // Сразу же переприсваиваем
+
+	L = 0;
+	M = 0;
+	L = M++; // Переприсваиваем после всего
+
+	M = M + 1;
+
+	M = M + LL;
+	M += LL;
+
+	M /= LL;
+	M %= LL;
+
+	M = ~0; // 4 байт 32 бит
+	
+
+	M >>= 6; //    / 2^6
+	M <<= 5; //    * 2^5
+
+	//M = M // + * / 
+
+	M |= 10;
+	M ^= 123;
+
+
+	++M;
+	M++;
+
+	--M;
+	M--;
+
+	int Num = 100;
+
+	int *Name; // Указатель (он хранит адрес)
+	int* Adress;// = 0x00bef990;
+
+	// Адрес   <- 100  
+
+	Name = &Num; // & (получения адреса) на клавишу 7 написать амперсанд
+	Adress = Name;
+
+
+	int Res; //= Num;
+
+	Res = *Adress; // * Взятия значения по адресу (обратная &)
+
+
+	int **AdresAdres = &Adress; // Указатель на указатель
+
+
+	int a = 10;
+
+	int* A1 = &a;
+	(*A1) = 1000;
+
+	int* B1 = &a;
+	(*B1) = 200;
+
+	
+	int &Psevdo = *A1; // Ссылка aka псевдоним
+	Psevdo = 10340;
 
 }
