@@ -18,5 +18,8 @@
     <ClCompile Include="Курс_от_20_02_С++_начало.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Занятие от 27.02.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

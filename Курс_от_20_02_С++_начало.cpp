@@ -1,210 +1,103 @@
-﻿
+﻿#include <cmath>
+#include <vector>
+#include <map>
+#include <iomanip>
+#include <iostream> // cin  cout
+//#include <bits/stdc++.h>
 
+using namespace std; // Указание префикса std:: по умолчанию
 
-// GitHub
-int main()   // start
-{ // Локальная область
-	int I; I = 1443434; // 4 байт
-	//long LL; // 4 байт
+void main2()
+{
+	//c - console
+	//in - input
 
-	long long LL2; LL2 = -1349820948329048; // 8 байт
-	long long int LLI = 14342; //  8 байт
 
-	__int32 I32 = 0; 
-	__int64 LL64;  // 8 байт
+	//int i;
+	long long ll;
 
-	char C;  // 1 байт ascii 256 
-	C = 'a'; // '' один символ
-	C = 97;
-	C = 32;
-	C = '0'; 
+	int ill; 
 
-	//char32_t C32; // 4 байт
+	ll* ill; // long long 
 
 
-	// f 10 выполнения по шагам
+	ll / ill; // long long
+	//3/ 2 == 1
+	// 3/ 2. == 1.5 // double
+	// 3/ 2.f == 1.5 // так как указано f - float
 
-	//string
-	float F; F = 1.443434; // 4 байт
-	double D; D = 1.325472348957894375; // 8 байт
+	// 1ll  // long long
+	// 1ull // unsigned long long
 
-	bool B;
-	B = 1;  B = true; 
-	B = 0;  B = false;
-	I32 + 100ll;
+	// 1 // int
 
-	100; // int 4 байт
+	int r = 0x000001F; // 0-9 ABCDEF
 
-	100ll; // long long
-	1.f;// float
-	1. ;// double 8 байт
-	
+	// 0x000010  ==  16
 
+	// << >> | & ^  ~
 
-	// Unreal Engine (C++)
-	int AmountBrick = I32;
+	// ==    ||   &&    <  >  <=   >=  !   !=   
 
-	// Арифметические операции
-	//  +   -    *     /               % 
 
-	AmountBrick = 5;
-	F = 10;
-	D = 52;
-	I32 = 92192123434;
-	LL64 = -2343252345;
 
-	I32 = (AmountBrick + F) * (D)   ;
-	(AmountBrick * F) / D;// <-
+	// + - * / %  == < >
 
-	LL64 = I32 = 0;
+	// + - * / % 
 
-	LL64 =  10 + ( I32 = (AmountBrick + F) * (D) ); // = 15  (+ 6 )
-	// float  /  (вещественное)
+	// 
 
 
 
-	LL64 = I32 / 100;
-	D = I32 / 100;
+	const char o = 3434; // -128 127 [0  128)  % 128  = 106
 
+	cin >> ll;
 
-	LL64 = F / 100;
-	D = F / 100;
 
 
-	LL64 = I32 / 100.;
-	D = I32 / 100.;
 
+	const int i = 3543454398709; // [0  2^31)  % 2^31
 
 
+	 float f; // 13524325 * 10^(34)    123456789,00 * 10^2  12345678900,00  
+	///                               123456789,00 * 10^-2    1234567,8900
 
-	// c++   float   Делитель или частное  -> вещественные
-	// c++  оба целочисл   -> целочисленный
+	 double ld;
 
-	// f9 точка остановки f5 запуск с отладкой
-	bool bAiming;
 
-	//int InAmount;
-	//int OutAmount;
+	unsigned char ch = 48;
+	cout << ch;
 
-	//int amountBrick;
-	//int Amount_Brick;
+	bool bl;
 
-	// + - / *    %
-	//    ~    negative
-	//    |     or   (+)
-	//    &     and  (*)
-	//    ^   XOR
-	//   <<
-	//   >>
-	// a = 10 b =  11 c = 12 d = 13 e = 14 f = 15
-	int LL = 0xb;
-	int R = 0xc; // 16 запись hex
+	unsigned long long ull; // 1 -   0 +
 
-	int M;
 
-	M = LL | R;
-	M = LL || R; // 0  1
 
 
-	M = LL & R; // &
-	M = LL ^ R;
-	LL = M ^ R;
 
-	//(false == 0)
+	const int iii = 1000;
+	//i = 10325443534;
+	//cin >> i;
+	//cout << i;
+	int in;
+	cin >> in;
+	const long long c_in = in;
+	//cin >> in;
 
-	//(true == 1)
+	int _true = 1;// = ch;
+	const int _false = 0;// = ch;
+	const long long very_big_number = 9999999999;
 
-	(M);
-		// M - > true M!=0   
-		// M -> false M == 0
+	const long long now_time = time(NULL);
+	cout << now_time;
 
+	cout << " " << ll;
 
-	M = LL << 5;
-	M = (LL == 1) >> 3;
-	M = ~LL;
+	//(_true  ==  )
 
-	//
 
-
-	// bool   true false
-	// and  &&
-	// or   ||
-	// > < 
-	//<=   >=  
-	// !
-	// !=
-	// ==  
-
-
-	bool flag  = (10 % 6 == 4);
-	20 % 6 == 2;
-
-
-	M = M + 1;
-
-	int L = 0;
-	M = 0;
-	L = ++M; // Сразу же переприсваиваем
-
-	L = 0;
-	M = 0;
-	L = M++; // Переприсваиваем после всего
-
-	M = M + 1;
-
-	M = M + LL;
-	M += LL;
-
-	M /= LL;
-	M %= LL;
-
-	M = ~0; // 4 байт 32 бит
-	
-
-	M >>= 6; //    / 2^6
-	M <<= 5; //    * 2^5
-
-	//M = M // + * / 
-
-	M |= 10;
-	M ^= 123;
-
-
-	++M;
-	M++;
-
-	--M;
-	M--;
-
-	int Num = 100;
-
-	int *Name; // Указатель (он хранит адрес)
-	int* Adress;// = 0x00bef990;
-
-	// Адрес   <- 100  
-
-	Name = &Num; // & (получения адреса) на клавишу 7 написать амперсанд
-	Adress = Name;
-
-
-	int Res; //= Num;
-
-	Res = *Adress; // * Взятия значения по адресу (обратная &)
-
-
-	int **AdresAdres = &Adress; // Указатель на указатель
-
-
-	int a = 10;
-
-	int* A1 = &a;
-	(*A1) = 1000;
-
-	int* B1 = &a;
-	(*B1) = 200;
 
 	
-	int &Psevdo = *A1; // Ссылка aka псевдоним
-	Psevdo = 10340;
 
 }
