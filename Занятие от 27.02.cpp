@@ -17,6 +17,11 @@ int& baa = a;
 
 int main()
 {
+#ifdef RED
+	++a;
+#endif
+
+
 	int a = 4343;
 	int b;
 
@@ -72,6 +77,10 @@ lable:
 
 	//goto (__dgfhdsgjkh);
 
+
+
+
+
 	if (a == 1)
 		goto _default;
 	else
@@ -90,7 +99,6 @@ lable:
 			a = 2000;
 			//return 0;
 
-
 	switch (a)
 	{
 	default:
@@ -102,8 +110,41 @@ lable:
 		a = 2000;
 		break;
 		//return 0;
-	}
+		switch (b)
+		{
+		case 1: 
+			a = 1000;
+			break; // Выйти из текущего switch
+		}
 
+	}
+	//printf;
+	//scanf
+	int i;
+	float f;
+	char ch;
+	int i2; // не иниц переменная
+
+	i = i2;
+
+	int* ptr = new int;
+	//scanf_s безопасный вариант разрешенный microsoft на него не ругается SDL
+	scanf_s("%d %f %c\n%d", ptr, &f, &ch, &i2); // cin ввод игнор спец символов Записывае по адресу
+
+	printf_s("%d %f %c\n%d", i, f, ch, i2); // cout вывод Важно как выводим
+
+
+
+
+
+
+#ifdef _DEBUG
+	cin >> a;
+
+#else
+	cin >> b;
+
+#endif
 
 	return 0; // Код ошибки 0 - Всё отлично
 
