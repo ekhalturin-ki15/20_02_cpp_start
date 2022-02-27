@@ -3,7 +3,7 @@
 #include <map>
 #include <iomanip>
 
-
+#include <string>
 #include <iostream> // cin  cout
 //#include <bits/stdc++.h>
 
@@ -17,196 +17,96 @@ int& baa = a;
 
 int main()
 {
-	int a = 10000;
-	int b = 2;
+	int a = 4343;
+	int b;
+
+	int& n = b;
+	//cin >> a >> b;
+	int max = 3294;
+
+	srand(time(0));
+
+	int random = 5 + (rand() % 11);
 
 
-	int* ptr;
-
-	{ // Область видимости
-		//cout << a;
-		int bb = 10900;
-
-		//delete &bb;
-
-
-		//ptr = &bb;
-		//cout << bb;
-		int a = 24325435;
-		//cout << baa;
-
-		//int psevdo;
-
-		int* dynamic_int;
-
-
-		//new int;//Возврат адреса
-
-		dynamic_int = new int;
-		*dynamic_int = 3 + 1;
-		cout << *dynamic_int;
-
-		delete dynamic_int;
-
-
-		//int& psevdo = *dynamic_int;
-
-
-
-
-		// Утечка памяти
-		//delete dynamic_int; // ОСВОБОЖДЕНИЕ ПАМЯТИ
-	}
-
-
-	
-
-
-	int bb = 2143244;
-
-	//int bb = 2323;
-
-	//cin >> *ptr;
-
-	//cout << bb;
-
-
-	cin >> b;
-
-	
-
-
-
-	if (b) // 0010000000 == true //  false == 000000000000000000
+	if ( cout<<"3" )
 	{
-		int c = 100;
+		cout << a << " < " << n;
 
-
-		a += 2;
-		a += 3; // Вне нашего условия
 	}
 	else
 	{
-		//cout << c;
-
+lable:
+		cout << a << " >= " << n;//else
 	}
 
-	//cout << c;
+	cout << "\n";
+
+	//a + "dfdf " +// to_string(b);
+	//to_string()
+
+
+
+	cout << ((a > b) ? "34" :  "dfdfdf"); // Типы совместимы void (ничего не возвращая - нельзя использовать)
+	cout << max;
+	max--;
+
+	if (max != 0)
+		goto lable;
 
 
 
 
-	bool bl = 1; // 1байт
-	bl = ~bl; // не работает true не обращает в false
-	bl = !bl;
+	//cout << string((a < n) ? string(" < ") : string(" >= "));
 
 
 
-
-	int n;
-	cin >> n;
-
-	a = 43857439857;
+	const int stop_program = 10;
+	//cin >> q;
+	cin >> a;
 
 
+	//char ch = getchar(); // Считать один символ
+	//ch = getchar();
+	//const bool true = 1;
 
+	//goto (__dgfhdsgjkh);
 
-
-	if (!(n < 100))
-	{
-		a = 0;
-	}
+	if (a == 1)
+		goto _default;
 	else
-	{
-		if (a < 1000)
-		{
-
-
-
-		}
+		if (a == 0)
+			goto _case0;
 		else
-		{
+			goto _case1;
+
+	//switch
+		_default:
+			{}
+		_case1: // Старт, откуда продолж программа
+			a = 1000;
+			//break; // Иначе перейдём дальше
+		_case0:
+			a = 2000;
+			//return 0;
 
 
-
-		}
-	}
-
-
-	cout << a;
-
-
-	//if ((n < 100))  тоже самое, что if (n >= 100)
-	//{
-	//}
-
-
-	if (!(n < 100))
+	switch (a)
 	{
-		a = 0;
-
+	default:
+	{}
+	case 1: // Старт, откуда продолж программа
+		a = 1000;
+		//break; // Иначе перейдём дальше
+	case 0:
+		a = 2000;
+		break;
+		//return 0;
 	}
 
 
+	return 0; // Код ошибки 0 - Всё отлично
 
-
-
-	if (0)
-	{
-		a *= 1000;
-
-
-
-
-
-	}
-
-	//
-	// 	   Ничего нет
-	//
-
-	if (1)
-	{
-		a *= 99;
-
-	}
-
-
-
-
-
-
-
-	//
-	// 	   a *= 99;
-	//
-	string aa = "ll == 0"; // true
-	string g = ""; // false
-
-
-
-
-	int nn;
-	cin >> nn;
-
-
-	if (a)
-	{
-		a *= 99;
-	}
-
-
-	if (3245983.435435 == true == 1) // 0010000000  // 000000000000000000
-	{
-		a = a + 1;
-	}
-
-
-
-
-
-
-
-
-	return 0;
+	//return 1; //     /0
+	//return 2; //      
 }
