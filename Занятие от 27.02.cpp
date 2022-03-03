@@ -1,78 +1,106 @@
+#include <iostream>
 #include <cmath>
-#include <vector>
-#include <map>
-#include <iomanip>
-
 #include <string>
-#include <iostream> // cin  cout
-//#include <bits/stdc++.h>
-
-using namespace std; // Указание префикса std:: по умолчанию
-
-//Глобальные переменные
-int a = 999999; // 
-int& baa = a;
-
-
+using namespace std;
 
 int main()
 {
-#ifdef RED
-	++a;
+    //int a, b, n;
+
+    //cin >> a >> b >> n;
+    ////a = 10, b = 15, n = 2;
+
+    //cout << int(a * n + b * n / 100) << " " << int(b * n) % 100;
+    //"%a%"
+#ifdef _DEBUG
+    FILE* IN, * OUT;
+    freopen_s(&IN, "input.txt", "r", stdin);
+    freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
 
-	int a;
-	int b;
-
-	//a++, b++;
 
 
-	cin >> a;
+    string s;
 
-	//Вначе инициализ до первой ; (только один раз)
+    while (getline(cin, s))
+    {
+        cout << '\n';
+        cout << '\0';
 
-
-	//Проверяем условие
-	// Выполняем то, что в {}
-	// Выполняем код после второй ;
-	//Проверяем условие
-	//..
-	
-
-	for (int i = 0; i < 10000; ++i) // Счетчик и он участвует в условии (пробежка по диапазону)
-		cout << "\\/";
-
-
-	for (int j = 0; (j < a); ++j, "dsf")
-	{
-		int q = 5;
-		cout << q << " " << j << "\n";
-		q = 244234;
-		continue; //Перейти к следующему шагу цикла
-		break; // выйти
-	}
-
-	//Тоже самое
-	int j = 0;
-	while (j < a) // true - выполняется
-	{
-		int q = 5;
-		cout << q << " " << j << "\n";
-		q = 244234;
-		++j, "dsf";
-	}
-
-
-	do //Обязательно 1 раз выполняется
-	{
-		int q = 5;
-		cout << q << " " << j << "\n";
-		q = 244234;
-		++j, "dsf";
-	} while (j < a); // True - выпонение не забудьте ;
+    }
 
 
 
+    //int max1;// = -100000000;
+    //int max2;
+    //int a;
+    //cin >> a;
+    //max2 = max1 = a;
+
+    //while (true)
+    //{
+    //    cin >> a;
+    //    if (a == 0) 
+    //        break;
+    //    
+    //    if (a >= max1)
+    //    {
+    //        max2 = max1;
+    //        max1 = a;            
+    //    }
+
+    //    if (max1 > a && a >= max2)
+    //    {
+    //        max2 = a;
+    //    }
+
+    //}
+
+    //abs(2- 4 + 1);
+
+    //cout << max2;
+
+
+
+    /*int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    for (int i = a; i <= b; ++i)
+    {
+        if (i % d == c) cout << i << " ";
+    }*/
+
+
+
+
+    //int sum = 0, a;
+
+    //while (true)
+    //{
+    //    cin >> a;
+    //    if (a == 0) break;
+    //    sum += a;
+
+    //    //if (sum > 1000) break;
+    //}
+
+
+    /*
+    do
+    {
+        cin >> a;
+        sum += a;
+    } while (a != 0)
+    */
+
+
+
+    /*a = 1;
+    while (a != 0)
+    {
+        cin >> a;
+        sum += a;
+    }
+    cout << sum;*/
 
 
 
