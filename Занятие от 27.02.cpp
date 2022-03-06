@@ -1,107 +1,85 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+
+#include <fstream>
 using namespace std;
+
+int a, b, c = int();
+bool bl;
+
+int tt[1000];
 
 int main()
 {
-    //int a, b, n;
 
-    //cin >> a >> b >> n;
-    ////a = 10, b = 15, n = 2;
-
-    //cout << int(a * n + b * n / 100) << " " << int(b * n) % 100;
-    //"%a%"
 #ifdef _DEBUG
-    FILE* IN, * OUT;
-    freopen_s(&IN, "input.txt", "r", stdin);
-    freopen_s(&OUT, "output.txt", "w", stdout);
+	ifstream in("input.txt");
+	ofstream out("output.txt"); 
+
 #endif
 
+	/*int mas[10];
+	mas[0] = 10;
+	mas[9] = 1000;
+
+	out << mas[9] << " ";
+
+	mas[9] = 1000;
+
+	out << mas << " ";
+
+	*(mas + 9) = 2000;
+
+	out << mas + 9 << " ";
+
+	out << mas[9] << " ";
+
+	cout << "234345";
+	out << "\n";*/
+	int a[10000];
+	int i = 0;
+
+	while (in >> a[i])
+	{
+		++i;
+	} // —читывание массива
+
+	int n;
+	cin >> n;
+	for (int increase = 0; increase <= n; ++increase)
+	{
+		
+		for (int x = 0; x < i; ++x)
+		{
+			out << a[x] + increase << " ";
+		}
+		out << "\n";
 
 
-    string s;
-
-    while (getline(cin, s))
-    {
-        cout << '\n';
-        cout << '\0';
-
-    }
-
-
-
-    //int max1;// = -100000000;
-    //int max2;
-    //int a;
-    //cin >> a;
-    //max2 = max1 = a;
-
-    //while (true)
-    //{
-    //    cin >> a;
-    //    if (a == 0) 
-    //        break;
-    //    
-    //    if (a >= max1)
-    //    {
-    //        max2 = max1;
-    //        max1 = a;            
-    //    }
-
-    //    if (max1 > a && a >= max2)
-    //    {
-    //        max2 = a;
-    //    }
-
-    //}
-
-    //abs(2- 4 + 1);
-
-    //cout << max2;
-
-
-
-    /*int a, b, c, d;
-    cin >> a >> b >> c >> d;
-    for (int i = a; i <= b; ++i)
-    {
-        if (i % d == c) cout << i << " ";
-    }*/
+	}
 
 
 
 
-    //int sum = 0, a;
-
-    //while (true)
-    //{
-    //    cin >> a;
-    //    if (a == 0) break;
-    //    sum += a;
-
-    //    //if (sum > 1000) break;
-    //}
-
-
-    /*
-    do
-    {
-        cin >> a;
-        sum += a;
-    } while (a != 0)
-    */
+	return 0;
 
 
 
-    /*a = 1;
-    while (a != 0)
-    {
-        cin >> a;
-        sum += a;
-    }
-    cout << sum;*/
+	//int masa[1000];
 
 
+	//ifstream in("input.txt");
+	//ofstream name_out2("output2.txt");
+
+
+
+
+	//int a, sum = 0;
+	/*while (cin >> a)
+	{
+		sum += a;
+	}
+	cout << sum;*/
 
 }
