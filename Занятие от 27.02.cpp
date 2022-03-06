@@ -19,67 +19,79 @@ int main()
 
 #endif
 
-	/*int mas[10];
-	mas[0] = 10;
-	mas[9] = 1000;
-
-	out << mas[9] << " ";
-
-	mas[9] = 1000;
-
-	out << mas << " ";
-
-	*(mas + 9) = 2000;
-
-	out << mas + 9 << " ";
-
-	out << mas[9] << " ";
-
-	cout << "234345";
-	out << "\n";*/
-	int a[10000];
-	int i = 0;
-
-	while (in >> a[i])
-	{
-		++i;
-	} // Считывание массива
-
+	const int SIZE = 100;
 	int n;
-	cin >> n;
-	for (int increase = 0; increase <= n; ++increase)
+	in >> n;
+
+	int mas[SIZE]; // Заранее
+
+
+	out << mas << "\n\n";
+
+	// error int mas[n];
+
+	int* dmas;
+
+	dmas = new int[n]; // Выделение памяти во времени выполнения
+
+	out << dmas << "\n";
+
+	for (int i = 0; i < n; ++i)
 	{
-		
-		for (int x = 0; x < i; ++x)
-		{
-			out << a[x] + increase << " ";
-		}
-		out << "\n";
-
-
+		in >> dmas[i];
 	}
 
-
-
-
-	return 0;
-
-
-
-	//int masa[1000];
-
-
-	//ifstream in("input.txt");
-	//ofstream name_out2("output2.txt");
-
-
-
-
-	//int a, sum = 0;
-	/*while (cin >> a)
+	for (int i = n - 1; i >=0 ; --i)
 	{
-		sum += a;
+		out <<  dmas[i] << " ";
 	}
-	cout << sum;*/
+
+	//delete dmas; // Удаление одного
+
+	int* copy_dmas;
+	copy_dmas = new int[n * 2];
+
+	for (int i = 0; i < n; ++i)
+	{
+		copy_dmas[i] = dmas[i];
+	}
+	delete[] dmas;
+	dmas = copy_dmas;
+	n = n * 2;
+
+
+
+	delete[] dmas;
+
+
+	char* dcharmas;
+
+	dcharmas = new char[n]; // Выделение памяти во времени выполнения
+
+	out << "\n";
+	out << (int*)dcharmas << "\n";
+
+	for (int i = 0; i < n; ++i)
+	{
+		in >> dcharmas[i];
+	}
+
+	for (int i = n - 1; i >= 0; --i)
+	{
+		out << dcharmas[i] << " ";
+	}
+
+	//delete dmas; // Удаление одного
+	delete[] dcharmas;
+
+	//delete dmas;
+
+	//dmas = new int[n*2];
+
+	
+
+
+
+
 
 }
