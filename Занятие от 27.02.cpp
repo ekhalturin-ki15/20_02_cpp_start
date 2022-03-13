@@ -100,29 +100,5 @@ int main()
 	freopen_s(&IN,  "input.txt", "r", stdin);
 	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
-
-
-	cin >> n;
-	state.resize(n);
-	m.resize(n);
-
-	for (int y = 0; y < n; ++y)
-	{
-		int w; cin >> w;
-		m[y].resize(w);
-		for (int x = 0; x < w; ++x)
-		{
-			cin >> m[y][x];
-		}
-	}
-	
-
-	//loop(0);
-
-	recursion(0);
-
-	cout << "\n";
-	
-
 	return 0;
 }
