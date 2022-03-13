@@ -50,12 +50,6 @@ string sq(int a, int b, char ch)
 	return "=";
 }
 
-string sq(int a, int b = 10, char ch = '4')
-{
-	return "=";
-}
-
-
 
 
 int main()
