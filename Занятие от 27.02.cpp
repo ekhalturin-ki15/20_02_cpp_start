@@ -17,29 +17,73 @@
 #include <ctime>
 using namespace std;
 
-void f2(int ptr)
+void f3()
 {
-	//int a = ____a;
-	cout << ptr << "\n";
-	ptr = 300;
+	cout << "3";
+
 
 }
 
 
-void f1(int ptr, int a, int* bb)
+void f2()
 {
-	ptr = 100;
-	//int a = ____a;
-	cout << ptr << "\n";
+	f3();
+	cout << "2";
+
 
 }
 
 
-void f1(int& ptr)
+void f1()
 {
-	//int a = ____a;
-	cout << ptr << "\n";
-	ptr = 300;
+	f2();
+	cout << "1";
+
+
+}
+
+void loop(int i)
+{
+	if (i < 10)
+	{
+		cout << i;
+		loop(i + 1);
+		cout << i;
+
+
+		return;
+	}
+	else
+		return;
+}
+
+int n;
+typedef vector<vector<int>> matrix;
+matrix m;
+
+vector<int> state;
+
+
+void recursion(int num_of_loop)
+{
+	if (num_of_loop < n) //0 < 5
+	{
+		for (int i = 0; i < m[num_of_loop].size(); ++i)
+		{
+			//cout << m[num_of_loop][i];
+			state[num_of_loop] = m[num_of_loop][i]; // Фиксация
+			recursion(num_of_loop + 1);
+		}
+	}
+	else
+	{
+		for (int i = 0; i < state.size(); ++i)
+		{
+			cout << state[i] << " ";
+		}
+		cout << "\n";
+		return;
+	}
 
 }
 
@@ -57,29 +101,28 @@ int main()
 	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
 
-	int a = 20;
-	cout << a << "\n";
 
-	int* b = &a;
+	cin >> n;
+	state.resize(n);
+	m.resize(n);
 
-	(*b) = 1000;
-	cout << b << "\n";
-	cout << a << "\n";
+	for (int y = 0; y < n; ++y)
+	{
+		int w; cin >> w;
+		m[y].resize(w);
+		for (int x = 0; x < w; ++x)
+		{
+			cin >> m[y][x];
+		}
+	}
+	
 
-	int& r = a;
-	int& rr = (*b);
+	//loop(0);
 
-	r = 100000;
-	cout << a << "\n";
+	recursion(0);
 
-	f2(a);
-
-	cout << a << "\n";
-
-	f1(a);
-
-	cout << a << "\n";
-
+	cout << "\n";
+	
 
 	return 0;
 }
