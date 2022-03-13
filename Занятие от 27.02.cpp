@@ -17,37 +17,30 @@
 #include <ctime>
 using namespace std;
 
-
-
-string sayHello2()
+void f2(int ptr)
 {
-	return "\nHello cpp\n";
+	//int a = ____a;
+	cout << ptr << "\n";
+	ptr = 300;
+
 }
 
 
-void sayHello()
+void f1(int ptr, int a, int* bb)
 {
-	cout << "\nHello cpp\n";
+	ptr = 100;
+	//int a = ____a;
+	cout << ptr << "\n";
 
-	return;
 }
 
 
-string sq(float a, int b, float f)
+void f1(int& ptr)
 {
-	return "-";
-}
+	//int a = ____a;
+	cout << ptr << "\n";
+	ptr = 300;
 
-
-string sq(int a, int b, float f = 10.f)
-{
-	return "+";
-}
-
-
-string sq(int a, int b, char ch)
-{
-	return "=";
 }
 
 
@@ -64,25 +57,28 @@ int main()
 	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
 
-	
-	//int a, b;
-	int a = 0;
-	int b;
+	int a = 20;
+	cout << a << "\n";
 
-	cout << sq(1, 1) <<" "<<sq(1.5f, 1, 1.5f) << " " << sq(1, 2,'a') << " "<< sq('2', 1, 1.5f) << " " << sq(10, 1, 1.5f)  << "\n";
-	//cout << sq(sq(10, 1, 'a') , 1, 'd') << "\n";
+	int* b = &a;
 
+	(*b) = 1000;
+	cout << b << "\n";
+	cout << a << "\n";
 
-	sayHello();
+	int& r = a;
+	int& rr = (*b);
 
-	vector<int> v(10);
+	r = 100000;
+	cout << a << "\n";
 
-	for (int i = 0; i < v.size(); ++i)
-	{
-		//v[i] = sq(i);
+	f2(a);
 
-	}
+	cout << a << "\n";
 
+	f1(a);
+
+	cout << a << "\n";
 
 
 	return 0;
