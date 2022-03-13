@@ -10,108 +10,86 @@
 #include <stack>
 
 #include <list>
+#include <forward_list>
+
+#include <cstdio>
+
+#include <ctime>
 using namespace std;
+
+
+
+string sayHello2()
+{
+	return "\nHello cpp\n";
+}
+
+
+void sayHello()
+{
+	cout << "\nHello cpp\n";
+
+	return;
+}
+
+
+string sq(float a, int b, float f)
+{
+	return "-";
+}
+
+
+string sq(int a, int b, float f = 10.f)
+{
+	return "+";
+}
+
+
+string sq(int a, int b, char ch)
+{
+	return "=";
+}
+
+string sq(int a, int b = 10, char ch = '4')
+{
+	return "=";
+}
+
+
 
 
 int main()
 {
 
 #ifdef _DEBUG
-	ifstream in("input.txt");
-	ofstream out("output.txt");
+	/*ifstream in("input.txt");
+	ofstream out("output.txt");*/
 
-	/*FILE *IN, * OUT;
-	freopen_s(&IN, "input.txt", "r", stdin);
-	freopen_s(&OUT, "output.txt", "w", stdout);*/
+	FILE *IN, * OUT;
+	freopen_s(&IN,  "input.txt", "r", stdin);
+	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
 
-	int* mas;
-	int* i;
+	
+	//int a, b;
+	int a = 0;
+	int b;
 
-	mas = new int[10000];
-	i = new int[1];
+	cout << sq(1, 1) <<" "<<sq(1.5f, 1, 1.5f) << " " << sq(1, 2,'a') << " "<< sq('2', 1, 1.5f) << " " << sq(10, 1, 1.5f)  << "\n";
+	//cout << sq(sq(10, 1, 'a') , 1, 'd') << "\n";
 
-	char ch;
 
-	bool bl;
+	sayHello();
 
-	unsigned char uch;
+	vector<int> v(10);
 
-	list<char> lltt;
-	for (list<char>::iterator it = lltt.begin(); it != lltt.end(); ++it)
+	for (int i = 0; i < v.size(); ++i)
 	{
+		//v[i] = sq(i);
 
 	}
 
 
 
-
-	//mas[100]
-	int n;
-	n = 5;
-
-	vector<char> v(100);
-
-	v.push_back(6);
-
-	for (vector<char>::iterator it = v.begin(); it != v.end(); ++it)
-	{
-
-	}
-
-
-	v.pop_back();
-
-	v.back();
-
-
-	string s;
-
-	s = "well";
-
-	s += " done";
-
-	//s(5);
-
-
-	*(s.begin() + 5);
-
-	s[5] = '\0';
-
-	cout << s;
-
-	//printf("%s", s);
-
-
-	//s.resize(5);
-
-	system("pause");
-
-	s = s + s;
-
-	list< int > li;
-
-
-	li.insert(next(li.begin(), 5), 1000);
-
-
-
-	queue<int> q;
-	q.push( 5 );
-	q.pop();
-	q.front();
-
-
-
-	stack < int > st;
-	st.push(5);
-	st.pop();
-	st.top();
-
-
-	deque< int > dq;
-	dq.push_front(30 );
-	dq.pop_front();
-
-
+	return 0;
 }
