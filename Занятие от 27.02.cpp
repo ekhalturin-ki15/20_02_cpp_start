@@ -1,104 +1,89 @@
 #include <iostream>
-#include <fstream>
-
 #include <vector>
+#include <algorithm>
 
-#include <string>
-#include <cmath>
-
-#include <queue>
-#include <stack>
-
-#include <list>
-#include <forward_list>
-
-#include <cstdio>
-
-#include <ctime>
 using namespace std;
 
-void f3()
+
+//#define BB(y) AA(y)
+//#define AA(x) BB(x)
+
+#define SUM3(a, b, c)  SUM(a, SUM(b, c))
+#define SUM(a, b) a + b
+
+#define E "\n"
+
+
+int sum(int a, int b)
 {
-	cout << "3";
-
-
+	return a + b;
 }
 
+//class и struct
+//
+//class ctext
+//{
+//private:
+//
+//
+//
+//
+//
+//
+//};
 
-void f2()
+struct literal
 {
-	f3();
-	cout << "2";
 
+};
 
-}
-
-
-void f1()
+struct text
 {
-	f2();
-	cout << "1";
+//public:
 
+	//Поля
+	int a;
+	char ch;
+	string st;
+	literal l;
 
-}
-
-void loop(int i)
-{
-	if (i < 10)
+	//Методы
+	int func()
 	{
-		cout << i;
-		loop(i + 1);
-		cout << i;
-
-
-		return;
-	}
-	else
-		return;
-}
-
-int n;
-typedef vector<vector<int>> matrix;
-matrix m;
-
-vector<int> state;
-
-
-void recursion(int num_of_loop)
-{
-	if (num_of_loop < n) //0 < 5
-	{
-		for (int i = 0; i < m[num_of_loop].size(); ++i)
-		{
-			//cout << m[num_of_loop][i];
-			state[num_of_loop] = m[num_of_loop][i]; // Фиксация
-			recursion(num_of_loop + 1);
-		}
-	}
-	else
-	{
-		for (int i = 0; i < state.size(); ++i)
-		{
-			cout << state[i] << " ";
-		}
-		cout << "\n";
-		return;
+		return 6;
 	}
 
+
+
+};
+
+
+
+int func()
+{
+	return 6;
 }
-
-
 
 int main()
 {
-
-#ifdef _DEBUG
-	/*ifstream in("input.txt");
-	ofstream out("output.txt");*/
-
+#ifdef NDEBUG
 	FILE *IN, * OUT;
 	freopen_s(&IN,  "input.txt", "r", stdin);
 	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
+
+	int in;
+
+	string s;
+
+	cout <<  sum(1, 4) << E;
+	cout <<  SUM(1, 4) << E;
+
+	cout << SUM(string("111"), string("222"));
+	//cout << string("43443") + string("343434"); // Одно и то же
+	cout << SUM3(1, 2, 3) << E;
+
+	//AA(5);
+
 	return 0;
 }
