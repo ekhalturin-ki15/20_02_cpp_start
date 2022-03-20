@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
@@ -37,32 +38,43 @@ struct literal
 
 };
 
-struct text
+struct Passport
 {
-//public:
+	string FIO;
+	string who_is_take;
 
-	//Поля
-	int a;
-	char ch;
-	string st;
-	literal l;
+	int number;
+	int serial;
 
-	//Методы
-	int func()
+	string outAllInfo()
 	{
-		return 6;
+		string s;
+		s += "ФИО обладателя - " + FIO + E;
+		s += "Серийные номер данного паспорта " + to_string(serial) + E;
+		return s;
 	}
-
-
 
 };
 
 
 
-int func()
+struct Text
 {
-	return 6;
-}
+//public:
+
+	//Поля
+	int size;
+	string t;
+	//Методы
+	void init(string s)
+	{
+		t = s;
+		size = s.size();
+	}
+};
+
+
+
 
 int main()
 {
@@ -72,18 +84,36 @@ int main()
 	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
 
-	int in;
+	//cout << func() << E;
 
-	string s;
 
-	cout <<  sum(1, 4) << E;
-	cout <<  SUM(1, 4) << E;
+	Passport my, your;
 
-	cout << SUM(string("111"), string("222"));
-	//cout << string("43443") + string("343434"); // Одно и то же
-	cout << SUM3(1, 2, 3) << E;
+	my.FIO = "Халтурин Евгений";
+	your.FIO = "Иванов Иван";
 
-	//AA(5);
+	my.number = 1010101;
+	my.serial = 1411;
 
-	return 0;
+	your.number = 2020202;
+	your.serial = -1;
+
+	cout << my.outAllInfo();
+	cout << your.outAllInfo();
+
+
+	string s, s1, s2;
+
+	s = "123456789";
+	s1 = "1";
+
+	cout << s.size() << E;
+
+	Text t, t1, t2;
+
+	t.init("123456789");
+	t1.init("1");
+
+	cout << t.size << E;
+
 }
