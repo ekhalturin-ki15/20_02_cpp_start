@@ -121,17 +121,43 @@ struct My_Vector
 {
 
 public:
-	int* mas;
+	
 	My_Vector()
 	{
 		size = 0;
 		mas = nullptr;
 	}
 
+
+	bool setter(int index, int new_val)
+	{
+		if ((index < 0) || (index >= size)) return false;
+		mas[index] = new_val;
+		return true;
+	}
+
+
+	int getter(int index, bool& isCorret)
+	{
+		if ((index < 0) || (index >= size))
+		{
+			isCorret = false;
+			return 0;
+
+		}
+
+		isCorret = true;
+		return mas[index];
+	}
+
+
 	void resize(int new_size)
 	{
 		int* new_mas;
 		new_mas = new int[new_size];
+		for (int i = 0; i < new_size; ++i) new_mas[i] = 0;
+
+
 		for (int i = 0; i < min(size, new_size); ++i)
 		{
 			new_mas[i] = mas[i];
@@ -147,7 +173,9 @@ public:
 		delete[] mas;
 	}
 
+
 private:
+	int* mas;
 	int size;
 };
 
@@ -161,53 +189,21 @@ int main()
 	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
 
-	//cout << func() << E;
-	int i = 10;
-
-	string s;
-	s.size();
-
-	s.resize(10);
-
-	while (i--)
-	{
-		Passport my, your;
-		Passport* q;
-
-		//my.size_reg = 1000;
-
-		q = new Passport;
+	My_Vector my;
+	my.resize(10);
 
 
-		my.FIO = "Халтурин Евгений";
-		your.FIO = "Иванов Иван";
+	my.setter(7, 100);
 
-		delete q;
+	bool isCorrect = true;
 
-		my.number = 1010101;
-		my.serial = 1411;
+	cout << my.getter(6, isCorrect) << " "<< isCorrect << E;
+	cout << my.getter(7, isCorrect) << " " << isCorrect << E;
+	cout << my.getter(1000, isCorrect) << " " << isCorrect << E;
 
-		your.number = 2020202;
-		your.serial = -1;
+	//my.size = 1000;
 
-		//cout << my.outAllInfo();
-		//cout << your.outAllInfo();
+	my.resize(100);
 
-		string s, s1, s2;
-
-		s = "123456789";
-		s1 = "1";
-
-		//cout << s.size() << E;
-
-		Text t("123456789"), t1("1"), t2;
-
-
-		//cout << t.size << E;
-	}
-
-
-	i = i + 5;
-	cout << "";
 
 }
