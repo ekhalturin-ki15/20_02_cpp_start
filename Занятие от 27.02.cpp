@@ -8,6 +8,64 @@ using namespace std;
 
 //#define SUM(a, b) a + b
 
+//Метапрограммирование
+//Программа пишущая программы
+//10
+//typename - > int char
+//int -> -2^64 2 64
+
+const int I_0 = 0;
+const int I_1 = 2;
+const int I_2 = 4;
+const int I_3 = 6;
+const int I_4 = 8;
+const int I_5 = 10;
+const int I_6 = 12;
+const int I_7 = 14;
+const int I_8 = 16;
+const int I_9 = 18;
+const int I_10 = 20;
+const int I_11 = 22;
+const int I_12 = 24;
+const int I_13 = 26;
+const int I_14 = 28;
+const int I_15 = 30;
+const int I_16 = 32;
+const int I_17 = 34;
+const int I_18 = 36;
+const int I_19 = 38;
+const int I_20 = 40;
+const int I_21 = 42;
+const int I_22 = 44;
+const int I_23 = 46;
+const int I_24 = 48;
+const int I_25 = 50;
+const int I_26 = 52;
+const int I_27 = 54;
+const int I_28 = 56;
+const int I_29 = 58;
+const int I_30 = 60;
+const int I_31 = 62;
+const int I_32 = 64;
+const int I_33 = 66;
+const int I_34 = 68;
+const int I_35 = 70;
+const int I_36 = 72;
+const int I_37 = 74;
+const int I_38 = 76;
+const int I_39 = 78;
+const int I_40 = 80;
+const int I_41 = 82;
+const int I_42 = 84;
+const int I_43 = 86;
+const int I_44 = 88;
+const int I_45 = 90;
+const int I_46 = 92;
+const int I_47 = 94;
+const int I_48 = 96;
+const int I_49 = 98;
+
+
 enum Stage
 {
 	start = 5,
@@ -119,13 +177,25 @@ struct Str
 {
 	string s;
 
+	void work_matrix(string filename)
+	{
+
+	}
+
+
 	string& solve()
 	{
+
+		//cout << Fib<50>::value << "\n";
+
 		int h, w;
 		cin >> h >> w;
 		Matrix<char> m(h , w);
 
 		vector<int> v(10);
+
+		//vector<10> f;
+
 		for (auto& it : v)
 		{
 
@@ -170,6 +240,10 @@ struct Str
 			cout << "\n";
 
 		}*/
+
+
+
+
 
 
 
