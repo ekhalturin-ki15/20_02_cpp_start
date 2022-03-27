@@ -3,9 +3,11 @@
 #include <algorithm>
 #include <string>
 #include <queue>
+#include <filesystem>
+#include <fstream>
 
 using namespace std;
-
+using namespace std::filesystem;
 //#define SUM(a, b) a + b
 
 //Метапрограммирование
@@ -13,6 +15,7 @@ using namespace std;
 //10
 //typename - > int char
 //int -> -2^64 2 64
+
 
 const int I_0 = 0;
 const int I_1 = 2;
@@ -175,79 +178,28 @@ ostream& operator<<(ostream& out, const Matrix<T>& m)
 
 struct Str
 {
-	string s;
-
 	void work_matrix(string filename)
 	{
+		ifstream in(filename);
 
+		int h, w;
+		in >> h >> w;
+		Matrix<char> m(h, w);
+		in >> m;
+		cout << m;
 	}
 
 
-	string& solve()
+	void solve()
 	{
+		std::filesystem::path files = current_path();
 
-		//cout << Fib<50>::value << "\n";
+		files = files /"files";
 
-		int h, w;
-		cin >> h >> w;
-		Matrix<char> m(h , w);
-
-		vector<int> v(10);
-
-		//vector<10> f;
-
-		for (auto& it : v)
+		for (auto it : directory_iterator(files))
 		{
-
+			work_matrix(it.path().string());
 		}
-
-
-		//try()
-		//catch()
-
-		cin >> m;
-
-		//cout << m.getter(1e6, 1);
-		//cout << m.setter(1e6, 1e6);
-		//for (int y = 0; y < h; ++y)
-		//{
-		//	for (int x = 0; x < w; ++x)
-		//	{
-		//		cout << m.getter(x, y);
-
-		//		//m._data[y][x] = 100;
-		//		//cin >> m._data[y][x];
-
-		//		//m._data[y][x] = 100;
-		//		m.setter(x, y) = 100;
-
-		//		cin >> m.setter(x, y);
-
-		//		//m[x, y];
-		//	}
-		//	cout << "\n";
-
-		//}
-		//
-
-		cout << m;
-		/*for (int y = 0; y < h; ++y)
-		{
-			for (int x = 0; x < w; ++x)
-			{
-				cout << m.getter(x, y);
-			}
-			cout << "\n";
-
-		}*/
-
-
-
-
-
-
-
-		return s;
 	}		
 
 };
