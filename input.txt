@@ -1,4 +1,4 @@
 3
-string1
-string2
-string3
+0
+1
+2
