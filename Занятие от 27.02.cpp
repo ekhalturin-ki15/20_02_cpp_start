@@ -176,30 +176,55 @@ ostream& operator<<(ostream& out, const Matrix<T>& m)
 	return out;
 }
 
-struct Str
-{
-	void work_matrix(string filename)
-	{
-		ifstream in(filename);
 
-		int h, w;
-		in >> h >> w;
-		Matrix<char> m(h, w);
-		in >> m;
-		cout << m;
+struct My_Vector
+{
+	int size;
+	My_Vector(int _size)
+	{
+		size = _size;
+		v.resize(size);
+	}
+
+	int getter(int index) const
+	{
+		if ((index >= size) || (index < 0))
+			return -1;
+		return v[index];
 	}
 
 
+	int& operator[](int i)
+	{
+		if ((i >= size) || (i < 0))
+		{
+			int error = -1;
+			return error;
+		}
+		return v[i];
+	}
+
+private:
+	vector<int> v;
+};
+
+
+
+struct Str
+{
 	void solve()
 	{
-		std::filesystem::path files = current_path();
+		int s = 10;
+		My_Vector v(s);
 
-		files = files /"files";
+		v.getter(4);
 
-		for (auto it : directory_iterator(files))
-		{
-			work_matrix(it.path().string());
-		}
+		v[5] = 100;
+
+		v[-100] -= 0;
+
+
+
 	}		
 
 };
