@@ -18,7 +18,6 @@ enum Stage
 // Возвращать псевдо для функций имеет смысл, если арг псевдоним, и мы возвр его
 int& sum(int& a)
 {
-	int t;
 	return a;
 }
 
@@ -29,44 +28,12 @@ struct Str
 
 	string& solve()
 	{
-		getline(cin, s);
 
-		int n;
-		cin >> n;
-
-		Stage stage = Stage(n);
-
-		switch (stage)
-		{
-		case start:
-			//cout << "starting\n";
-			break;
-		case process:
-			//cout << "process\n";
-			break;
-		case stop:
-			//cout << "ending\n";
-			break;
-		default:
-			//cout << "no stage\n";
-			break;
-		}
-		//double& d = reinterpret_cast<double>(n);
-
-		// void* t = &n;
-		// double& d = ((double*)(t*));
-
-		int& qq = n;
-		sum(n);
-		int& q = sum(n);
-		q = 100;
-		cout << q << "\n";
-		
-		cout << sum(n) << "\n";
 
 
 		return s;
-	}
+	}		
+
 };
 
 
