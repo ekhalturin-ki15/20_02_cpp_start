@@ -21,7 +21,7 @@ int& sum(int& a)
 	return a;
 }
 
-
+template <typename T>
 struct Matrix
 {
 public:
@@ -36,7 +36,7 @@ public:
 		// v.assign(w, -1);
 		h = _h;
 		w = _w;
-		_data.assign(h, vector<int>(w));
+		_data.assign(h, vector<T>(w));
 
 	}
 
@@ -46,17 +46,17 @@ public:
 	// 1 удобная передача арг
 	// 2 защита данных
 	// 3 валидация опр коррект
-	int& setter(int x, int y)
+	T& setter(int x, int y)
 	{
 		if (y >= _data.size())
 		{
-			int error = -1;
+			T error = -1;
 			return error;
 		}
 
 		if (x >= _data[y].size())
 		{
-			int error = -1;
+			T error = -1;
 			return error;
 		}
 
@@ -66,7 +66,7 @@ public:
 	// 1 удобная передача арг
 	// 2 защита данных
 	// 3 валидация опр коррект
-	int getter(int x, int y) const // Конст методы ничего не меняют
+	T getter(int x, int y) const // Конст методы ничего не меняют
 	{
 		if (y >= _data.size())
 			return -1;
@@ -77,7 +77,7 @@ public:
 		return _data[y][x];
 	}
 
-	int getter(pair<int,int> pr) const
+	T getter(pair<int,int> pr) const
 	{
 		return getter(pr.first, pr.second);
 	}
@@ -85,11 +85,11 @@ public:
 	//friend istream& operator>>(istream& in, Matrix& m); // Для Того, чтобы обр к полям в функциям
 
 private:
-	vector<vector<int>> _data;
+	vector<vector< T >> _data;
 };
 
-
-istream& operator>>(istream& in, Matrix& m)
+template <typename T>
+istream& operator>>(istream& in, Matrix<T>& m)
 {
 	for (int y = 0; y < m.h; ++y)
 	{
@@ -101,7 +101,8 @@ istream& operator>>(istream& in, Matrix& m)
 	return in;
 }
 
-ostream& operator<<(ostream& out, const Matrix& m)
+template <typename T>
+ostream& operator<<(ostream& out, const Matrix<T>& m)
 {
 	for (int y = 0; y < m.h; ++y)
 	{
@@ -122,9 +123,14 @@ struct Str
 	{
 		int h, w;
 		cin >> h >> w;
-		Matrix m(h , w);
+		Matrix<char> m(h , w);
 
-		vector<int> v;
+		vector<int> v(10);
+		for (auto& it : v)
+		{
+
+		}
+
 
 		//try()
 		//catch()
