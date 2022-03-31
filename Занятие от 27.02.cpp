@@ -208,24 +208,147 @@ private:
 	vector<int> v;
 };
 
-
-
 struct Str
 {
+
+	char recurs_function(int i, string s)
+	{
+		char ch = s[i];
+
+		if (i < s.size()-1)
+			cout << recurs_function(i + 1, s);
+
+		return ch;
+	}
+
+
+	vector<pair<int, int>> WASD = { {0,-1}, {-1, 0}, {0, 1}, {1, 0} };
+
+
+	int recursion(int sx, int sy, vector<vector<int>>& v, int n)
+	{
+		int ans = 1;
+
+		//for (auto [sh_x, sh_y] : WASD)
+		for (int i =0 ; i < WASD.size(); ++i)
+		{
+			int sh_x = WASD[i].first;
+			int sh_y = WASD[i].second;
+
+			int x = sx + sh_x;
+			int y = sy + sh_y;
+
+			if ((x < 0) || (x >= n) || (y < 0) || (y >= n)) continue;
+			if (v[y][x] != 0) continue;
+
+			v[y][x] = v[sy][sx] + 1;
+			ans += recursion(x, y, v, n);
+		}
+		return ans;
+	}
+
+
 	void solve()
 	{
-		int s = 10;
-		My_Vector v(s);
 
-		v.getter(4);
+		vector<vector<int>> v;
+		int n;
+		cin >> n;
+		v.assign(n, vector<int>(n));
 
-		v[5] = 100;
+		for (int y = 0; y < n; ++y)
+		{
+			for (int x = 0; x < n; ++x)
+			{
+				char ch;
+				cin >> ch;
+				switch (ch)
+				{
+				case '.': v[y][x] = 0; break;
+				case '*': v[y][x] = -1; break;
+				}
+			}
+		}
 
-		v[-100] -= 0;
+		int sx, sy;
+		cin >> sx >> sy;
+		sx--; sy--;
+
+		v[sy][sx] = 1;
+
+		cout << recursion(sx, sy, v, n);
 
 
 
-	}		
+
+
+	//	long long a, b; // O(log max(a,b))
+
+	//	cin >> a >> b;
+	//	while ((a != 0) && (b != 0))
+	//	{
+	//		if (a > b) a = a % b;
+	//		else b = b % a;
+	//	}
+	//	cout << a + b;
+
+
+
+
+
+		//string s;
+		//cin >> s;
+		//sort(s.begin(), s.end()); //
+
+		//for (int i = 0; i < s.size(); ++i)
+			// cout << s[i];
+
+		//cout << recurs_function(0,  s);
+
+
+
+
+
+		//long long N;
+
+		//cin >> N;
+
+
+		//vector<int> pr; // Простой делитель
+		//vector<int> pow; //Сколько раз поделилось
+
+		//for (int i = 2; i <= sqrt(N); ++i)
+		//{
+		//	int p = 0;
+		//	while (N % i == 0)
+		//	{
+		//		++p;
+		//		N /= i;
+		//	}
+		//	if (p != 0)
+		//	{
+		//		pr.push_back(i);
+		//		pow.push_back(p);
+		//	}
+		//}
+
+		//if (N > 1)
+		//{
+		//	pr.push_back(N);
+		//	pow.push_back(1);
+		//}
+
+		//for (int i = 0; i < pr.size(); ++i)
+		//{
+		//	if (i > 0) cout << "*";
+		//	cout << pr[i];
+		//	if (pow[i] > 1)
+		//	{
+		//		cout << "^" << pow[i];
+		//	}
+		//}
+
+	}
 
 };
 
@@ -254,7 +377,7 @@ int main()
 		str.resize(1);
 		str.front().solve();
 #ifdef _DEBUG
-		cout << "\n" << number_test << " ------------ \n";
+		cout << "\n\n" << number_test << " ------------ \n";
 #endif
 	}
 
