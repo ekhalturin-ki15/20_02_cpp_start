@@ -251,7 +251,37 @@ struct Str
 	void solve()
 	{
 
-		vector<vector<int>> v;
+
+		long long  n;
+		cin >> n;
+
+		long long  x;
+		cin >> x;
+
+		long long  l = 0; long long  r = n + 1;
+		long long  m;
+
+		while (r - l > 1)
+		{
+			m = (r + l) / 2;
+
+			if (x < m)
+			{
+				cout << "x < " << m << "\n";
+				r = m;
+			}
+			else
+			{
+				l = m;
+				cout << "x >= " << m << "\n";
+			}
+		}
+
+
+		cout << l << " == " << x << "\n";
+
+
+		/*vector<vector<int>> v;
 		int n;
 		cin >> n;
 		v.assign(n, vector<int>(n));
@@ -276,7 +306,7 @@ struct Str
 
 		v[sy][sx] = 1;
 
-		cout << recursion(sx, sy, v, n);
+		cout << recursion(sx, sy, v, n);*/
 
 
 
