@@ -44,7 +44,71 @@ int main()
 
 
 	//make_heap();
-	priority_queue<int> pq; // Структура данных - куча
+	priority_queue<int> pq; // Структура данных - куча 
+	//Обёртка queue stack
+
+
+	int a, b;
+	cin >> a >> b;
+	try
+	{
+		a / b;
+		cout << "Все хорошо";
+	}
+	catch (...)
+	{
+		cout << "Ошибка";
+	}
+
+	
+	cout << "наша программа работает" << a;
+
+
+
+
+	return 0;
+	cin >> n;
+
+	vector<int> v = { 6, 5, 7, 4, 8, 3, 9, 2, 10, 1, 11 };
+	vector<int> vv = { 1, 2, 3, 4 };
+	vector<int> vvv = { 3, 2, 1 };
+	// -----
+
+	//while (next_permutation(vv.begin(), vv.end()))
+	do
+	{
+		for (auto it : vv)
+			cout << it << " ";
+		cout << "\n";
+	} while (next_permutation(vv.begin(), vv.end()));
+
+
+
+	//cout << prev_permutation(vv.begin(), vv.end()) << endl;
+	//cout << next_permutation(vv.begin(), vv.end()) << endl; // 1 3 2
+	//cout << next_permutation(vvv.begin(), vvv.end()) << endl;
+
+	//
+
+	return 0;
+	//std::reverse(v.begin(), v.end() - 2);
+	std::swap(v, vv);
+	int a = 1, b = 4;
+	a ^= b ^= a ^= b;
+
+
+
+	while (cin >> a)
+	{
+		pq.push(-a);
+	}
+
+	//make_heap
+	while (pq.size() > 0)
+	{
+		cout << pq.top() << " ";
+		pq.pop();
+	}
 
 
 
