@@ -7,114 +7,46 @@
 #include <fstream>
 #include <set>
 #include <random>
+#include <map>
 
 
 using namespace std;
 
 mt19937 rand_gen;
 
-
-void generation_test(int n, int k, int m)
+struct cmp
 {
-	//rand_gen();
-
-	cout << n << "\n";
-	set<int> s;
-	
-	for (int i = 0; i < n; ++i)
+	int x = 10;
+	bool operator()(int l, int r) const
 	{
-		int new_int = unsigned int(rand_gen()) % m;
-		cout << new_int << " ";
+		return abs(l - x) < abs(r - x);
 	}
-	cout << "\n" << k << "\n";
-	for (int i = 0; i < k; ++i)
-	{
-		int new_int = unsigned int(rand_gen()) % m;
-		cout << new_int << " ";
-	}
-	cout << "\n";
-}
-
-
-void main2(int a, int b);
-
-int step = 0;
+};
 
 int main()
 {
-	
-
-	//rand();
-
-
 #ifdef _DEBUG
 	FILE* IN, * OUT;
 	freopen_s(&IN, "input.txt", "r", stdin);
 	freopen_s(&OUT, "output.txt", "w", stdout);
 #endif
-	rand_gen.seed(time(0));
-	//generation_test(1e5, 1e5, 1e9);
-	//return 0;
+	
 
-	vector<int> v;
-	int n, k ;
-	cin >> n;
-	v.resize(n);
-	for (int i = 0; i < n; ++i)
-		cin >> v[i];
+	//vector<int> v = { 1, 4, 2, 3, 1, 3, 2, 32, 4, 3, 2, 4, 5, 3, 2, 1, 2, 1, 12, 234, 0, 39 , 34 };
 
-	cin >> k;
-	/*
-	vector<int> sv(k);
-	for (int i = 0; i < k; ++i)
-	{
-		cin >> sv[i];
-	}*/
+	//sort(v.begin(), v.end(), my_less);
 
 
-	//for (int i = 0; i < n; ++i) // 1e5
-	//{
-	//	for (int j = 0; j < k; ++j) // 1e5
-	//	{
-	//		if (v[i] == sv[j])
-	//		{
-	//			cout << v[i] << " ";
-	//			sv[j] = -1;
-	//			break;
-	//		}
-	//	}
+	set<int, cmp> s = {11, 4, 3, 2, 4, 5, 3, 2, 1, 2, 1, 10, 12, 234, 0, 39 , 34 };
 
-	//}
+	for (auto it : s)
+		cout << it << " ";
 
 
 
-	multiset<int> sv; // Дубликаты
-
-	sv.begin();
-	sv.end();
-
-
-	if (sv.size()) sv.erase(--sv.end());
-
-	for (int i = 0; i < k; ++i)
-	{
-		int a;
-		cin >> a;
-		sv.insert(a);
-	}
 
 
 
-	for (int i = 0; i < n; ++i)
-	{
-		auto& it = v[i];
-
-		if (sv.count(it)) // 5
-		{
-			cout << it << " ";
-			sv.erase(sv.find(it)); // 5 // 5
-		}
-	}
 
 
 
