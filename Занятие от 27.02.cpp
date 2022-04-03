@@ -6,97 +6,115 @@
 #include <filesystem>
 #include <fstream>
 #include <set>
+#include <random>
 
 
 using namespace std;
 
-void generation_test()
-{
+mt19937 rand_gen;
 
+
+void generation_test(int n, int k, int m)
+{
+	//rand_gen();
+
+	cout << n << "\n";
+	set<int> s;
+	
+	for (int i = 0; i < n; ++i)
+	{
+		int new_int = unsigned int(rand_gen()) % m;
+		cout << new_int << " ";
+	}
+	cout << "\n" << k << "\n";
+	for (int i = 0; i < k; ++i)
+	{
+		int new_int = unsigned int(rand_gen()) % m;
+		cout << new_int << " ";
+	}
+	cout << "\n";
 }
 
 
+void main2(int a, int b);
+
+int step = 0;
+
 int main()
 {
-#ifdef _DEBUG
-	FILE *IN, * OUT;
-	freopen_s(&IN,  "input.txt", "r", stdin);
-	freopen_s(&OUT, "output.txt", "w", stdout);
-#endif
 	
 
+	//rand();
 
 
+#ifdef _DEBUG
+	FILE* IN, * OUT;
+	freopen_s(&IN, "input.txt", "r", stdin);
+	freopen_s(&OUT, "output.txt", "w", stdout);
+#endif
+	rand_gen.seed(time(0));
+	//generation_test(1e5, 1e5, 1e9);
+	//return 0;
 
-	int a;
-	set<int> mn;
+	vector<int> v;
+	int n, k ;
+	cin >> n;
+	v.resize(n);
+	for (int i = 0; i < n; ++i)
+		cin >> v[i];
 
-	while (cin >> a)
+	cin >> k;
+	/*
+	vector<int> sv(k);
+	for (int i = 0; i < k; ++i)
 	{
-		mn.insert(a);
+		cin >> sv[i];
+	}*/
+
+
+	//for (int i = 0; i < n; ++i) // 1e5
+	//{
+	//	for (int j = 0; j < k; ++j) // 1e5
+	//	{
+	//		if (v[i] == sv[j])
+	//		{
+	//			cout << v[i] << " ";
+	//			sv[j] = -1;
+	//			break;
+	//		}
+	//	}
+
+	//}
+
+
+
+	multiset<int> sv; // Дубликаты
+
+	sv.begin();
+	sv.end();
+
+
+	if (sv.size()) sv.erase(--sv.end());
+
+	for (int i = 0; i < k; ++i)
+	{
+		int a;
+		cin >> a;
+		sv.insert(a);
 	}
 
 
 
-	for (auto it : mn)
+	for (int i = 0; i < n; ++i)
 	{
-		cout << it << " ";
+		auto& it = v[i];
+
+		if (sv.count(it)) // 5
+		{
+			cout << it << " ";
+			sv.erase(sv.find(it)); // 5 // 5
+		}
 	}
-	cout << "\n";
-
-
-	set<int> mn_2 = { 3, 5, 6, 2 , 1, 3, 45, 2 ,5 };
-	for (auto it : mn_2)
-	{
-		cout << it << " ";
-	}
-	cout << "\n";
-
-
-	//swap(mn, mn_2);
-	//mn.swap(mn_2); // Более по умному переставляет местами
-	// 
-	//vector<int> v = { 5, 5, 5, 5, 5 };
-	//v.count
-
-	cout << mn.contains(5) << "\n";
-	cout << mn_2.contains(5) << "\n";
-
-	cout << mn.count(5) << "\n"; // 0
-	cout << mn_2.count(5) << "\n"; // 1
-
-	multiset<int> mm_mul;
-
-	// insert
-	// erase
-	// count
-
-	for (auto it = mn.begin(); it != mn.end();)
-	{
-		//auto et = it; et++;
-		/*int c = a;
-		a = b;
-		b = c;*/
-		auto et = next(it, 1);
-		mn.erase(it); // it - не валидный
-		it = et;
-		//it = mn.begin();
-	}
-
-	//if (!mn.erase(86))
-	//	cout << "Мы ничего не удалили";
-
-	for (auto it : mn)
-	{
-		cout << it << " ";
-	}
-	cout << "\n";
-
-	/*for (auto it : mn_2)
-	{
-		cout << it << " ";
-	}
-	cout << "\n";*/
 
 
 
