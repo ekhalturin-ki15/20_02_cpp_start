@@ -29,7 +29,7 @@ struct cmp
 
 
 
-int main()
+int main3()
 {
 #ifdef _DEBUG
 	FILE* IN, * OUT;

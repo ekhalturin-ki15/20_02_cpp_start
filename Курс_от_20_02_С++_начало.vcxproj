@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Дорешивание 07 04.cpp" />
     <ClCompile Include="Занятие от 27.02.cpp" />
     <ClCompile Include="Курс_от_20_02_С++_начало.cpp" />
   </ItemGroup>
