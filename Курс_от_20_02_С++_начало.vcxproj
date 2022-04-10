@@ -113,7 +113,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>RED2;_DEBUG;_CONSOLE;RED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -140,14 +140,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Дорешивание 07 04.cpp" />
-    <ClCompile Include="Занятие от 27.02.cpp" />
-    <ClCompile Include="Курс_от_20_02_С++_начало.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="input.txt" />
     <Text Include="output.txt" />
     <Text Include="Доп.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="car.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="hellicopter.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="tech.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="car.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="hellicopter.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="tech.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,30 @@
+Ivan
+1 2
+
+Ivan
+1 2
+Noname
+0 0
+100
+
+
+Ivan
+1 2
+Ural
+0 0
+100
+
+
+Ural
+100 20
+100
+Ivan
+11 22
+Ural
+100 20
+100
+
+
+Noname
+0 0
+30000
