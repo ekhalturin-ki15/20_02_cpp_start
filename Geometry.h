@@ -7,5 +7,7 @@ protected: // -> private
 	double rotated;
 
 public: // -> то, как наследуем (у нас public)
-	void move(int dx, int dy);
+	virtual void move(int dx, int dy) = 0; // Чисто абстрактный метод
+
+	void getter(int new_x, int new_y);
 };

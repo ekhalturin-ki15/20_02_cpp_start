@@ -7,7 +7,11 @@ Hellicopter::Hellicopter()
 	x = 0;
 	y = 0;
 }
-
+void Hellicopter::move(int dx, int dy) 
+{
+	x += 2 * dx;
+	y += 2 * dy;
+}
 
 void Hellicopter::setName(string s)
 {
@@ -21,7 +25,7 @@ void Hellicopter::destroy()
 }
 
 
-std::string Hellicopter::info()
+std::string Hellicopter::info() const
 {
 	string s;
 	s += name;

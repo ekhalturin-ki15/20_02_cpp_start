@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="log.txt" />
     <Text Include="output.txt" />
     <Text Include="Доп.txt" />
   </ItemGroup>
@@ -155,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="car.h" />
     <ClInclude Include="Geometry.h" />
+    <ClInclude Include="Global.h" />
     <ClInclude Include="hellicopter.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="tech.h" />

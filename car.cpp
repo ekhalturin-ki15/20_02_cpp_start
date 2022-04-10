@@ -14,13 +14,19 @@ void Car::setName(string s)
 	this->name = s;
 }
 
+void Car::move(int dx, int dy)
+{
+	x += dx;
+	y += dy;
+}
+
 void Car::destroy()
 {
 	// sound.play();
 }
 
 
-std::string Car::info()
+std::string Car::info() const
 {
 	string s;
 	s += name;

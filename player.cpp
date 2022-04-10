@@ -19,7 +19,7 @@ void Player::move(int dx, int dy)
 	y += dy;
 }
 
-std::string Player::info()
+std::string Player::info() const
 {
 	std::string s;
 	s += name; s += "\n";

@@ -16,7 +16,7 @@ class Player : public Geom
 public:
 	Player();
 	void move(int dx, int dy);
-	std::string info();
+	std::string info() const;
 
 	void setCar(class Car* car);
 	

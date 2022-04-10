@@ -10,9 +10,12 @@ class Hellicopter : public Tech, public Geom
 
 public:
 
+	void move(int dx, int dy) ;
+
+
 	Hellicopter();
 	void destroy();
-	std::string info();
+	std::string info() const;
 
 	void setName(string s);
 

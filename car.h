@@ -16,8 +16,8 @@ public:
 	Car();
 	
 	void destroy();
-	std::string info();
-
+	std::string info() const;
+	void move(int dx, int dy);
 	void setName(string s);
 
 };
